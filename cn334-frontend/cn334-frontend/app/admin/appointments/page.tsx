@@ -22,7 +22,7 @@ export default function AppointmentManagementPage() {
     }, [])
     const fetchAppointments = async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/appointments`)
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}appointments`)
             if (response.ok) {
                 const result = await response.json()
                 const data: AppointmentRecord[] = result.data || result
