@@ -16,8 +16,8 @@ jobs:
          fetch-depth: 0 
            
       - name: 2. Run Robot Framework Tests
-        run: |
-          docker compose up --build --exit-code-from robot_tester
+        working-directory: appointment-api/appointment-api
+        run: docker compose up --build --exit-code-from robot_tester
           
       - name: 3. Promote to Release Branch
         if: success() 
